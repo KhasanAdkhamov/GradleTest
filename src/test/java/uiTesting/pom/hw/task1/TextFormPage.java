@@ -18,6 +18,7 @@ public class TextFormPage {
     private final By selectYearsLocator = By.className("react-datepicker__year-select");
     private final By hobbiesLocator = By.xpath("//*[@id=hobbies-checkbox-1']");
     private final By currentAddressLocator = By.xpath("//*[@id='currentAddress']");
+    private final By dayOfClassLocator = By.xpath("//*[text()='5' and contains(@class,'react-datepicker__day')]");
     private final By submitLocator = By.xpath("//*[@id='submit']");
 
 
@@ -61,6 +62,7 @@ public class TextFormPage {
         WebElement yearElement = driver.findElement(selectYearsLocator);
         Select selectYear = new Select(yearElement);
         selectYear.selectByVisibleText(year);
+        driver.findElement(dayOfClassLocator).click();
         return this;
     }
 
