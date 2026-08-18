@@ -9,11 +9,11 @@ public class TestFormPage extends BaseForFormTest{
     @Override
     public void setUp() {
         super.setUp();
-        textFormPage = new TextFormPage(getDriver());
+        textFormPage = new TextFormPage(getDriver(), getDriverWait());
     }
 
     @Test
-    public void MyTestForFormPage() {
+    public void MyTestForFormPage() throws InterruptedException {
         textFormPage.open()
                 .setName("Ivan")
                 .setLastName("Popov")
@@ -21,8 +21,9 @@ public class TestFormPage extends BaseForFormTest{
                 .setGender()
                 .setNumber("12121212")
                 .setDayOfBirth("May", "1999")
+                .setSubject("ma")
                 .setHobbies()
                 .setAddress("Moscow")
-                .setSubmit();
+                .clickSubmit();
     }
 }

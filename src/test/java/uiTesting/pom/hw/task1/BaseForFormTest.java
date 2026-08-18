@@ -20,9 +20,14 @@ public class BaseForFormTest {
     public void setUp() {
         driver = new ChromeDriver();
         driverWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        driver.manage().window().maximize();
     }
 
     public WebDriver getDriver() {
         return driver;
+    }
+
+    public WebDriverWait getDriverWait() {
+        return driverWait;
     }
 }
