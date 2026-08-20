@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation("io.rest-assured:rest-assured:5.5.6")
     implementation("org.seleniumhq.selenium:selenium-java:4.45.0")
     testImplementation("org.seleniumhq.selenium:selenium-java:4.43.0")
     compileOnly("org.projectlombok:lombok:1.18.42")
