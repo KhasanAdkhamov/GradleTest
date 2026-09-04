@@ -31,12 +31,14 @@ public class BaseRest {
 
     @Test
     public void testPatch() {
-        String json = """
-                {
-                "title": "foo"
-                }
-                """;
-        given().log().all().spec(SpecClient.shouldSendBody(json)).when().patch("/posts/1").then().spec(SpecClient.shouldBeStatusCode200AndLog());
+//        String json = """
+//                {
+//                "title": "foo"
+//                }
+//                """;
+        PostsUpdate postsUpdate = new PostsUpdate("foo");
+
+        given().log().all().spec(SpecClient.shouldSendBody(postsUpdate)).when().patch("/posts/1").then().spec(SpecClient.shouldBeStatusCode200AndLog());
     }
 
     @Test

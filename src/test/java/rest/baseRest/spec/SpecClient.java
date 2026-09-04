@@ -3,14 +3,15 @@ package rest.baseRest.spec;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import rest.baseRest.PostsUpdate;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
 public class SpecClient {
 
-    public static RequestSpecification shouldSendBody(String json) {
-        return given().contentType(ContentType.JSON).body(json);
+    public static RequestSpecification shouldSendBody(PostsUpdate postsUpdate) {
+        return given().contentType(ContentType.JSON).body(postsUpdate);
     }
 
     public static ResponseSpecification shouldBeStatusCode200AndLog()  {

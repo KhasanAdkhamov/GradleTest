@@ -10,6 +10,7 @@ repositories {
 }
 
 dependencies {
+    implementation("com.google.code.gson:gson:2.13.2")
     testImplementation("io.rest-assured:rest-assured:5.5.6")
     implementation("org.seleniumhq.selenium:selenium-java:4.45.0")
     testImplementation("org.seleniumhq.selenium:selenium-java:4.43.0")
